@@ -57,7 +57,7 @@ gulp.task('build', function (done) {
  */
 gulp.task('deploy', ['build'], function () {
   return gulp.src("./dist/**/*")
-    .pipe(deploy())
+    .pipe(deploy());
 });
 
 /**
