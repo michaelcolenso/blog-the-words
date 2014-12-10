@@ -1,0 +1,29 @@
+<div class="col-md-2">
+  <div class="sidebar">
+    <p><%- partial("../_shared/_tagline") %></p>
+  </div>
+  </div>
+<div class="col-md-8">
+  <div class="posts">
+    <% for(slug in public.articles._data) { %>
+      <% if(slug != "index") { %>
+        <% var article = public.articles._data[slug] %>
+        <% if(article.published !== false || environment=='development') { %>
+          <% var classes = article.published == false ? 'unpublished' : '' %>
+          <a href="/articles/<%- slug %>" class="article-link <%- classes %>">
+            <% if(typeof article.hero != "undefined" && article.hero) { %>
+              <img class="banner" src="/images/articles/<%- slug %>/hero.jpg" title="<%- article.title %>" />
+            <% } %>
+            <ul class="list-unstyled article-link-details">
+              <li class="article-link-title"><%- article.title %></li>
+              <% if(typeof article.tagline != "undefined") { %>
+                <li class="article-link-tagline"><%- article.tagline %></li>
+              <% } %>
+              <li class="article-link-date"><%- article.date %></li>
+            </ul>
+          </a>
+        <% } %>
+      <% } %>
+    <% } %>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+# DO THINGS AND TELL PEOPLE
+
+Roof party vero XOXO, voluptate cardigan jean shorts stumptown cred Intelligentsia. Consequat Truffaut magna, enim put a bird on it art party bespoke tilde aliqua single-origin coffee cred fashion axe tofu meditation. Bespoke PBR&B 90's, officia fap consequat brunch. Semiotics Helvetica duis assumenda. Flannel sed PBR&B, reprehenderit Portland meh seitan pour-over irony 3 wolf moon occaecat ugh Marfa. Vero Bushwick hashtag, Helvetica labore eu officia wayfarers typewriter keytar Brooklyn. Scenester Truffaut Tumblr, post-ironic pour-over fap gastropub kale chips High Life letterpress.
