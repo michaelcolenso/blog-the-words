@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>colenso.org</title>
-    <link>http://colenso.org</link>
+    <title>loud noises</title>
+    <link>http://michaelcolenso.github.io/blog-the-words</link>
     <description>I try to be a nice lady.</description>
-    <atom:link href="http://colenso.org/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://michaelcolenso.github.io/blog-the-words/feed.xml" rel="self" type="application/rss+xml" />
     
       
     
@@ -15,8 +15,8 @@
             <title>do things and tell people</title>
             <description><![CDATA[]]></description>
             <pubDate>Wed Dec 10 2014 00:00:00 GMT-0500 (EST)</pubDate>
-            <link>http://colenso.org/articles/[object Object]</link>
-            <guid isPermaLink="true">http://colenso.org/articles/[object Object]</guid>
+            <link>http://michaelcolenso.github.io/blog-the-words/articles/[object Object]</link>
+            <guid isPermaLink="true">http://michaelcolenso.github.io/blog-the-words/articles/[object Object]</guid>
           </item>
         
       
