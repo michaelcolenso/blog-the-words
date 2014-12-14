@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Latin+Modern+Mono:400/Libre+Caslon+Display:400">
   
-  <meta property="og:title" content="TITLE" />
+  <meta property="og:title" content="<%- site %>" />
   <meta property="og:description" content="<%- description %>" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://michaelcolenso.github.io/blog-the-words" />
-  <meta property="og:image" content="http://colenso.org/apple-touch-icon.png" />
+  <meta property="og:url" content="http://colenso.org" />
+  <meta property="og:image" content="/apple-touch-icon.png" />
   <meta property="og:site_name" content="<%- site %>" />
 </head>
 <body>
@@ -24,19 +24,18 @@
   <div class="wrapper">
     <div class="header">
       <div class="container">
-        <div class="row">
+        <div class="row cray">
           <div class="col-md-2 col-sm-3">
-            <h1 class="header-logo"><a href="/"><%- site %></a></h1>
+            <h1 class="header-logo"><a href="/">we're gonna be awesome.</a></h1>
           </div>
 
-          <div class="col-md-8 col-sm-7">
+          <div class="col-md-6 col-sm-7">
             <%- partial("_shared/_navigation") %>
           </div>
 
-          <div class="col-md-2 col-sm-2">
+          <div class="col-md-2 col-sm-4">
             <%- partial("_shared/_social") %>
           </div>
-
         </div>
       </div>
     </div>
@@ -59,15 +58,7 @@
     </div>
   </div>
 
-  <div class="visible-xs">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <%- partial("_shared/_social") %>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
 </body>
 </html>

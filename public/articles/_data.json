@@ -2,10 +2,10 @@
   "index": {
     "title": "Articles"
   },
-  "do-things-tell-people" : {
-    "title": "do things and tell people",
+  "blog-the-words" : {
+    "title": "blog the words",
     "tagline": "words are powerful tools",
-    "hero": true,
+    "hero": false,
     "date": "10 December 2014",
     "acknowledgements": {
       "person": {
@@ -14,7 +14,7 @@
       },
       "person2": {
         "name": "person two",
-        "role": "awesome person"
+        "role": "is a particularly awesome person. top notch."
       }
     },
     "published": true

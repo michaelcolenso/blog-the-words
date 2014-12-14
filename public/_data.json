@@ -1,11 +1,12 @@
 {
   "index": {
-    "title": "Home"
+    "title": "home",
+    "thing": "thingdata"
   },
   "about": {
-    "title": "About"
+    "title": "about"
   },
   "404": {
-    "title": "Oh no!"
+    "title": "wtf"
   }
 }
