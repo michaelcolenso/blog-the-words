@@ -93,21 +93,13 @@ gulp.task('s3deploy', ['clean', 'set-env', 'build'], function () {
         'Cache-Control': 'max-age=315360000, no-transform, public'
     };
  
-  return gulp.src('dist/**')
+  return gulp.src('dist/**/*')
             
         // Add a revisioned suffix to the filename for each static asset
         .pipe($.revAll({
           ignore: [
-          
             /^\/favicon.ico$/g,
-            /^\/apple-touch-icon.png$/g,
-            /^\/about.html/g,
-            /^\/projects\/index.html/g,
-            /^\/articles\/index.html/g,
-            /^\/projects\/index.html/g,
-            /^\/404.html/g,
-            /^\/index.html/g
-            
+            /^\/apple-touch-icon.png$/g        
           ]
         }))
                 
