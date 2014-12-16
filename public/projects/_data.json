@@ -1,6 +1,6 @@
 {
   "index": {
-    "title": "Projects"
+    "title": "projects"
   },
 
   "do-things": {
@@ -11,8 +11,8 @@
     "published": true
   },
   "words-project": {
-    "title": "words project",
-    "tagline": "words words words",
+    "title": "the words project",
+    "tagline": "so many fucking words and no context.",
     "date": "2013",
     "published": true
   }

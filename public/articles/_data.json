@@ -5,7 +5,7 @@
   "blog-the-words" : {
     "title": "blog the words",
     "tagline": "words are powerful tools",
-    "hero": false,
+    "hero": true,
     "date": "10 December 2014",
     "acknowledgements": {
       "person": {
@@ -15,6 +15,60 @@
       "person2": {
         "name": "person two",
         "role": "is a particularly awesome person. top notch."
+      }
+    },
+    "published": true
+  },
+
+  "blog-more-words" : {
+    "title": "tired of words",
+    "tagline": "fuck you",
+    "hero": true,
+    "date": "15 December 2014",
+    "acknowledgements": {
+      "person": {
+        "name": "person one",
+        "role": "what"
+      },
+      "person2": {
+        "name": "person two",
+        "role": "huh"
+      }
+    },
+    "published": true
+  },
+
+  "pulp-vader" : {
+    "title": "say it again",
+    "tagline": "fuck you",
+    "hero": true,
+    "date": "15 December 2014",
+    "acknowledgements": {
+      "person": {
+        "name": "person one",
+        "role": "what"
+      },
+      "person2": {
+        "name": "person two",
+        "role": "huh"
+      }
+    },
+    "published": true
+  },
+
+  "footprints" : {
+    "title": "walking",
+    "tagline": "hold my hand",
+    "hero": true,
+    "date": "15 December 2014",
+    "acknowledgements": {
+      "person": {
+        "name": "person one",
+        "role": "what"
+      },
+      "person2": {
+        "name": "person two",
+        "role": "huh"
       }
     },
     "published": true

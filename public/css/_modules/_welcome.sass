@@ -1,13 +1,15 @@
 .welcome
-  @extend %type-heading
+  @extend %type-base
   .welcome-hero
-    +type(58)
+    +type(88)
     +line-height(18)
     @media (max-width: $screen-xs-max)
-      +type(30)
+      +type(40)
   p
     +type(24)
     @media (max-width: $screen-xs-max)
       +type(18)
   a
-    text-decoration: underline
+    text-decoration: none
+    &:hover
+      text-decoration: underline

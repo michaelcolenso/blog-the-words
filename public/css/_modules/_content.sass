@@ -1,3 +1,9 @@
+.hero-strapline
+  margin-bottom: 1em
+  padding-bottom: 3%
+  color: $color-light-grey
+  @extend %type-heading
+  +type(44)
 .meta-header
   border-bottom: 2px solid $color-off-white
   padding-bottom: 24px
@@ -43,10 +49,6 @@
     li
       padding: 0.2em 0
   figure
-    @media (min-width: $screen-lg-min)
-      margin-left: -195px
-    @media (min-width: $screen-md-min)
-      margin-left: -160px
     figcaption
       *:last-child
         margin-bottom: 0

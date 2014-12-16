@@ -6,6 +6,12 @@
   "about": {
     "title": "about"
   },
+  "projects": {
+    "title": "projects"
+  },
+  "articles": {
+    "title": "articles"
+  },
   "404": {
     "title": "wtf"
   }

@@ -3,7 +3,7 @@
     <p><%- partial("../_shared/_tagline") %></p>
   </div>
 </div>
-<div class="col-md-9 col-sm-12">
+<div class="col-md-9">
   
   <div class="projects">
     <div class="row">
@@ -12,8 +12,8 @@
           <% var project = public.projects._data[slug] %>
           <% if(project.published !== false || environment=='development') { %>
             <% var classes = project.published == false ? 'unpublished' : '' %>
-            <div class="col-md-4 col-sm-4">
-              <a href="/projects/<%- slug %>" class="project <%- classes %>">
+            <div class="col-md-6 col-sm-6">
+              <a href="/projects/<%- slug %>.html" class="project <%- classes %>">
                 <div class="project-image">
                   <img class="img-responsive" src="/images/pulp-vader.jpg" title="<%- project.title %>" %>
                   <div class="project-tagline"><%- project.tagline %></div>

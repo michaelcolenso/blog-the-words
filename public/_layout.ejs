@@ -6,36 +6,37 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>TITLE</title>
+  <title>colenso.org</title>
   <meta name="description" content="<%- description %>">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Latin+Modern+Mono:400/Libre+Caslon+Display:400">
-  
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
   <meta property="og:title" content="<%- site %>" />
   <meta property="og:description" content="<%- description %>" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="http://colenso.org" />
   <meta property="og:image" content="/apple-touch-icon.png" />
   <meta property="og:site_name" content="<%- site %>" />
+  <script stc="js/app.js"></script>
 </head>
 <body>
 
   <div class="wrapper">
     <div class="header">
       <div class="container">
-        <div class="row cray">
-          <div class="col-md-2 col-sm-3">
-            <h1 class="header-logo"><a href="/">we're gonna be awesome.</a></h1>
+        <div class="row">
+          <div class="col-md-2 col-sm-2">
+            <h5 class="header-logo"><a href="/">| colenso |</a></h5>
           </div>
 
-          <div class="col-md-6 col-sm-7">
+          <div class="col-md-4 col-sm-4">
             <%- partial("_shared/_navigation") %>
           </div>
 
-          <div class="col-md-2 col-sm-4">
-            <%- partial("_shared/_social") %>
-          </div>
+            <div class="col-md-4 col-sm-4">
+              <%- partial("_shared/_social") %>
+            </div>
         </div>
       </div>
     </div>
@@ -57,7 +58,6 @@
       </div>
     </div>
   </div>
-
 
 
 </body>

@@ -8,14 +8,13 @@ var cp          = require('child_process');
 var env         = require('gulp-env');
 var argv = require('minimist')(process.argv.slice(2));
 
-
 /**
  * Serve the Harp Site
  */
 gulp.task('serve', function () {
   harp.server(__dirname, {
     port: 9000
-  }, function () {
+}, function () {
     browserSync({
       proxy: "localhost:9000",
       open: false,
@@ -39,7 +38,6 @@ gulp.task('serve', function () {
   })
 });
 
-
 gulp.task('set-env', function () {
     env({
         file: ".env.json",
@@ -48,7 +46,6 @@ gulp.task('set-env', function () {
         }
     });
 });
-
 
 /**
  * Build the Harp Site
@@ -70,51 +67,40 @@ gulp.task('deploy', ['build'], function () {
 /**
  * clean it up
  */
-gulp.task('clean', function () {  
-  return gulp.src('dist', {read: false})
+gulp.task('clean', function () {
+  return gulp.src('dist/**/*', {read: false})
     .pipe($.clean());
 });
-
 
 /**
  *  Publish to Amazon S3 / CloudFront
  */
-gulp.task('s3deploy', ['clean', 'set-env', 'build'], function () {
+gulp.task('s3deploy', ['set-env'], function () {
     var awspublish = require('gulp-awspublish');
     var aws = {
         "key": process.env.AWS_KEY,
         "secret": process.env.AWS_SECRET,
-        "bucket": 'www.colenso.org',
-        "region": 'us-standard',
-        "distributionId": 'E3KEXN4TB284DR'
+        "bucket": 'colenso.org',
+        "region": 'us-standard'
     };
-    var publisher = awspublish.create(aws);
+
+var publisher = awspublish.create(aws);
     var headers = {
         'Cache-Control': 'max-age=315360000, no-transform, public'
     };
- 
-  return gulp.src('dist/**/*')
-            
+  return gulp.src('./dist/**')
         // Add a revisioned suffix to the filename for each static asset
-        .pipe($.revAll({
-          ignore: [
-            /^\/favicon.ico$/g,
-            /^\/apple-touch-icon.png$/g        
-          ]
-        }))
-                
+        //.pipe($.revAll())
         // Gzip, set Content-Encoding headers
         .pipe(awspublish.gzip())
-        
         // Publisher will add Content-Length, Content-Type and headers specified above
         // If not specified it will set x-amz-acl to public-read by default
         .pipe(publisher.publish(headers))
 
         // Print upload updates to console
         .pipe(awspublish.reporter())
-        
         // Updates the Default Root Object of a CloudFront distribution
-        .pipe($.cloudfront(aws));
+        //.pipe($.cloudfront(aws));
 });
 
 
