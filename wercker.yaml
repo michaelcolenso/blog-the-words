@@ -1,0 +1,15 @@
+box: wercker/nodejs@1.0.2
+build:
+  steps:
+    - wercker/npm-install@0.9.3
+deploy:
+  steps:
+    - dlapiduz/cf-invalidate:
+        key-id: $KEY
+        key-secret: $SECRET
+        distribution-id: $CF_DIST
+        path: /*
+    - s3sync:
+            key-id: $KEY
+            key-secret: $SECRET
+            bucket-url: $BUCKET
