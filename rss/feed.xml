@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>loud noises</title>
-    <link>http://michaelcolenso.github.io/blog-the-words</link>
-    <description>I try to be a nice lady.</description>
-    <atom:link href="http://michaelcolenso.github.io/blog-the-words/feed.xml" rel="self" type="application/rss+xml" />
+    <title>colenso.org</title>
+    <link>http://colenso.org</link>
+    <description>michael colenso | developer</description>
+    <atom:link href="http://colenso.org/feed.xml" rel="self" type="application/rss+xml" />
     
       
     
@@ -12,11 +12,56 @@
         
         
           <item>
-            <title>do things and tell people</title>
-            <description><![CDATA[]]></description>
+            <title>blog the words</title>
+            <description><![CDATA[<h2>Sometimes I blog all the words and stuff.</h2>
+<p>Seriously. I just blog &#39;em right out of my mind.</p>
+<p>It&#39;s fancy for me.</p>
+]]></description>
             <pubDate>Wed Dec 10 2014 00:00:00 GMT-0500 (EST)</pubDate>
-            <link>http://michaelcolenso.github.io/blog-the-words/articles/[object Object]</link>
-            <guid isPermaLink="true">http://michaelcolenso.github.io/blog-the-words/articles/[object Object]</guid>
+            <link>http://colenso.org/articles/[object Object]</link>
+            <guid isPermaLink="true">http://colenso.org/articles/[object Object]</guid>
+          </item>
+        
+      
+    
+      
+        
+        
+          <item>
+            <title>tired of words</title>
+            <description><![CDATA[<h3>Sometimes I blog all the words and stuff.</h3>
+<p>Seriously. I just blog &#39;em right out of my mind.</p>
+<p>It&#39;s fancy for me.</p>
+]]></description>
+            <pubDate>Mon Dec 15 2014 00:00:00 GMT-0500 (EST)</pubDate>
+            <link>http://colenso.org/articles/[object Object]</link>
+            <guid isPermaLink="true">http://colenso.org/articles/[object Object]</guid>
+          </item>
+        
+      
+    
+      
+        
+        
+          <item>
+            <title>say it again</title>
+            <description><![CDATA[]]></description>
+            <pubDate>Mon Dec 15 2014 00:00:00 GMT-0500 (EST)</pubDate>
+            <link>http://colenso.org/articles/[object Object]</link>
+            <guid isPermaLink="true">http://colenso.org/articles/[object Object]</guid>
+          </item>
+        
+      
+    
+      
+        
+        
+          <item>
+            <title>walking</title>
+            <description><![CDATA[]]></description>
+            <pubDate>Mon Dec 15 2014 00:00:00 GMT-0500 (EST)</pubDate>
+            <link>http://colenso.org/articles/[object Object]</link>
+            <guid isPermaLink="true">http://colenso.org/articles/[object Object]</guid>
           </item>
         
       
