@@ -1,15 +1,51 @@
 .welcome
+  position: absolute
+  display: table
+  min-height: 600px
+  @media (max-width: $screen-xs)
+    min-height: 600px
+  @media (max-width: 667px)
+    min-height: 400px
+
   @extend %type-base
   .welcome-hero
-    +type(88)
-    +line-height(18)
-    @media (max-width: $screen-xs-max)
-      +type(40)
-  p
-    +type(24)
-    @media (max-width: $screen-xs-max)
-      +type(18)
+    display: table-cell
+    vertical-align: middle
+    +type(176)
+    +line-height(10)
+    text-align: left
+    @media (max-width: $screen-md)
+      +type(150)
+    @media (max-width: $screen-sm)
+      +type(140)
+      +line-height(14)
+
+    @media (max-width: 667px)
+      +type(120)
+    @media (max-width: $screen-xs)
+      +type(90)
+      +line-height(18)
+      
+    .idiot
+      +type(12)
+      
+    .light
+      color: $color-almostblack
+      opacity: .3
+      +type(2)
+      transition: all .5s linear
+      &:last-child
+        +type(2)
+      @media (max-width: 667px)
+        +type(2)
+        +line-height(4)
+      @media (max-width: $screen-xs)
+        +type(4)
+        +line-height(8)
   a
     text-decoration: none
+    @media (max-width: $screen-xs)
+      text-decoration: none
     &:hover
       text-decoration: underline
+  

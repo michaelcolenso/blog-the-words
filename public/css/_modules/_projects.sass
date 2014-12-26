@@ -1,3 +1,5 @@
+h2
+  margin-bottom: 2em
 .project-link
   display: block
   background: $color-off-white
@@ -37,14 +39,13 @@
     padding: 20px
     color: $color-white
   .project-title
-    @extend %type-heading
-    font-style: italic
-    +type(18)
+    @extend %type-body
+    +type(20)
     margin-bottom: 6px
-    color: $color-light-grey
+    color: #000
   .project-date
     color: $color-light-grey
-    +type(14)
+    +type(18)
   .unpublished
     &:after
       display: block

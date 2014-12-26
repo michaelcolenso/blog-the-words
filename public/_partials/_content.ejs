@@ -19,7 +19,7 @@
     <% if(typeof link != "undefined") { %>
       <a href="<%- link %>">
     <% } %>
-      <img class="img-responsive project-hero" src="/images/pulp-vader.jpg" />
+      <img class="img-responsive project-hero" src="/images/<%- slug %>.png" />
     <% if(typeof link != "undefined") { %>
       </a>
     <% } %>
@@ -36,7 +36,7 @@
 
 <% } else { %>
 
-  <div class="col-md-8">
+  <div class="col-md-offset-1 col-md-8">
     <div class="content">
       <%- yield %>
     </div>

@@ -1,11 +1,12 @@
-<div class="col-md-3">
+<div class="col-md-2">
   <div class="sidebar">
-    <p><%- partial("../_shared/_tagline") %></p>
+    <h3><%- partial("../_shared/_tagline") %></h3>
   </div>
 </div>
-<div class="col-md-9">
+<div class="col-md-offset-1 col-md-9">
   
   <div class="projects">
+    <h2>I make fancy maps.</h2>
     <div class="row">
       <% for(slug in public.projects._data) { %>
         <% if(slug != "index") { %>
@@ -15,7 +16,7 @@
             <div class="col-md-6 col-sm-6">
               <a href="/projects/<%- slug %>.html" class="project <%- classes %>">
                 <div class="project-image">
-                  <img class="img-responsive" src="/images/pulp-vader.jpg" title="<%- project.title %>" %>
+                  <img class="img-responsive" src="/images/<%- slug %>.png" title="<%- project.title %>" %>
                   <div class="project-tagline"><%- project.tagline %></div>
                 </div>
                 <h2 class="project-title"><%- project.title %></h2>

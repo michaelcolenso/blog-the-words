@@ -1,54 +1,76 @@
 .header
-  @media (max-width: $screen-xs-max)
-    margin-bottom: 24px
+  margin-bottom: 2em
+  padding-top: 2em
+  @media (max-width: 667px)
+    padding-top: .5em
+
+  @media (max-width: $screen-xs)
+    margin-bottom: 0
+    
   .header-logo,
   .header-navigation,
   .header-social
+    +type(30)
     @extend %type-heading
-    +type(23)
     line-height: $line-height-base
-    margin-bottom: 48px
-    @media (max-width: $screen-md-max)
-      +type(20)
-    @media (max-width: $screen-xs-max)
-      margin-bottom: 12px
-      +type(18)
+  
+    
   .header-logo
-    +type(38)
+    margin-top: 0
+    @extend %type-body
     text-align: left
-    margin-top: -.3em
-    @media (max-width: $screen-xs-max)
-      margin-bottom: 6px
+    &:after
+      content: '.org'
+      position: relative
+      opacity: .8
+      transition: all 1s ease-in
+    &:hover:after
+      opacity: 0
+    &:before
+      content: 'michael'
+      position: relative
+      opacity: 0
+      transform: perspective( 600px ) rotateX(120deg)
+      transition: all 1s ease-in-out
+    &:hover:before
+      opacity: .8
+      transform: translateX(0px) perspective (0)
+      color: $color-abel
     a
-      color: $color-almostblack
-      opacity: .4
-      transition: all .4s ease-in-out
+      color: $color-abel
       &:hover
-        opacity: 1
-
-  .header-navigation
+        color: $color-almostblack
     @media (max-width: $screen-xs-max)
-      float: left
+      &:before
+        display: none
+
+
+        
+  .header-navigation
+    @include center-block()
+    text-align: center
+    @media (max-width: $screen-xs)
+      float: right
     .selected
       border-bottom: 2px solid $color-abel
       &:hover
         border-bottom-color: $color-black
     a
       color: $color-almostblack
-      opacity: .4
+      opacity: .9
       transition: all .4s ease-in-out
       &:hover
         opacity: 1
-  .header-social
-    max-height: 2em
-    margin-bottom: 0
+        
+        
+  .header-social  
     a
       color: $color-almostblack
       opacity: .4
       transition: all .4s ease-in-out
       &:hover
         opacity: 1
-    @media (max-width: $screen-xs-max)
-      float: right
-    @media (max-width: $screen-xs-min)
+    @media (max-width: $screen-xs)
+      display: none  
+    @media (max-width: 667px)
       display: none

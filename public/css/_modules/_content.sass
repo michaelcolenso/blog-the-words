@@ -1,9 +1,14 @@
 .hero-strapline
-  margin-bottom: 1em
+  margin-bottom: 0em
   padding-bottom: 3%
   color: $color-light-grey
   @extend %type-heading
   +type(44)
+.nutshell
+  color: $color-light-grey
+  +line-height(3em)
+  list-style-type: none
+  margin-left: -3em
 .meta-header
   border-bottom: 2px solid $color-off-white
   padding-bottom: 24px
@@ -75,15 +80,10 @@
   p, ul
     +type(18)
     +line-height(30)
-  p
-    img
-      @extend .img-responsive
-  p img,
-  pre
-    @media (min-width: $screen-lg-min)
-      margin-left: -97px
-    @media (min-width: $screen-md-min)
-      margin-left: -80px
+
+  img
+    @extend .img-responsive
+  
   a
     border-bottom: solid 2px transparent
     transition: color 0.3s, background-color 0.3s

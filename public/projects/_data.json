@@ -3,17 +3,18 @@
     "title": "projects"
   },
 
-  "do-things": {
-    "title": "do things",
-    "tagline": "and then talk about them",
-    "link": "http://github.com/michaelcolenso",
+  "guns": {
+    "title": "From Warfighter to Crimefighter: Mapping the Militarization of Law Enforcement in the United States",
+    "tagline": "Interactive map of all the items obtained by state and county law enforcement agencies via the Department of Defense 1033 Program.",
+    "link": "http://police-militarization-map.herokuapp.com/",
     "date": "2014",
     "published": true
   },
-  "words-project": {
-    "title": "the words project",
-    "tagline": "so many fucking words and no context.",
-    "date": "2013",
+  "tax-parcel-map": {
+    "title": "an interactive plat map for Traverse City, Michigan.",
+    "tagline": "Built with d3.js, leaflet, node.js, socket.io, and some other fancy stuff.",
+    "link": "http://tcplatmap.herokuapp.com/",
+    "date": "2014",
     "published": true
   }
 }

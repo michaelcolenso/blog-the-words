@@ -5,10 +5,8 @@ body
   min-width: 320px
 
 .wrapper
-  padding: 96px 0
-  @media (max-width: $screen-xs-max)
-    padding: 24px 0
-
+  padding: 1%
+  
 h1, h2, h3, h4, h5, h6
   font-weight: normal
   font-family: inherit
@@ -16,7 +14,8 @@ h1, h2, h3, h4, h5, h6
   padding: 0
   @extend %type-heading
 
-
+.hero-strapline
+  margin-bottom: 0em
 
 p
   &.last
@@ -34,3 +33,9 @@ html
   &.wf-loading
     body
       opacity: 0
+
+.media
+  a
+    min-width: 100px
+    max-width: 100px
+    

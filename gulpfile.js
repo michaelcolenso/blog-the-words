@@ -2,8 +2,10 @@ var gulp        = require('gulp');
 var $ = require('gulp-load-plugins')();
 var harp        = require('harp')
 var browserSync = require('browser-sync');
+var source = require('vinyl-source-stream');
 var reload      = browserSync.reload;
 var deploy      = require('gulp-gh-pages');
+var browserify = require('browserify');
 var cp          = require('child_process');
 var env         = require('gulp-env');
 var argv = require('minimist')(process.argv.slice(2));
@@ -38,6 +40,15 @@ gulp.task('serve', function () {
   })
 });
 
+// Browserify task
+gulp.task('browserify', function() {
+  var bundleStream = browserify({
+    entries: ['./public/js/main.js'],
+    debug: true
+  }).bundle().pipe(source('core.js'));
+  return bundleStream.pipe(gulp.dest('./dist/js'));
+});
+
 gulp.task('set-env', function () {
     env({
         file: ".env.json",
@@ -50,7 +61,7 @@ gulp.task('set-env', function () {
 /**
  * Build the Harp Site
  */
-gulp.task('build', function (done) {
+gulp.task('build',['browserify'], function (done) {
   cp.exec('harp compile . dist', {stdio: 'inherit'})
     .on('close', done)
 });
@@ -64,6 +75,7 @@ gulp.task('deploy', ['build'], function () {
 });
 
 
+
 /**
  * clean it up
  */
@@ -75,13 +87,13 @@ gulp.task('clean', function () {
 /**
  *  Publish to Amazon S3 / CloudFront
  */
-gulp.task('s3deploy', ['set-env'], function () {
+gulp.task('s3deploy', ['build','set-env'], function () {
     var awspublish = require('gulp-awspublish');
     var aws = {
         "key": process.env.AWS_KEY,
         "secret": process.env.AWS_SECRET,
-        "bucket": 'colenso.org',
-        "region": 'us-standard'
+        "bucket": 'michael.colenso.org',
+        "region": 'us-west-2'
     };
 
 var publisher = awspublish.create(aws);
