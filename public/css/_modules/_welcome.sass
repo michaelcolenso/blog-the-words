@@ -1,9 +1,9 @@
 .welcome
   position: absolute
   display: table
-  min-height: 600px
+  min-height: 400px
   @media (max-width: $screen-xs)
-    min-height: 600px
+    min-height: 400px
   @media (max-width: 667px)
     min-height: 400px
 
@@ -16,15 +16,12 @@
     text-align: left
     @media (max-width: $screen-md)
       +type(150)
-    @media (max-width: $screen-sm)
-      +type(140)
-      +line-height(14)
-
     @media (max-width: 667px)
-      +type(120)
-    @media (max-width: $screen-xs)
       +type(90)
-      +line-height(18)
+      
+    @media (max-width: $screen-xs)
+      +type(70)
+      +line-height(13)
       
     .idiot
       +type(12)
@@ -38,10 +35,10 @@
         +type(2)
       @media (max-width: 667px)
         +type(2)
-        +line-height(4)
+        +line-height(2)
       @media (max-width: $screen-xs)
         +type(4)
-        +line-height(8)
+        +line-height(4)
   a
     text-decoration: none
     @media (max-width: $screen-xs)
