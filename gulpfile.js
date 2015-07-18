@@ -2,13 +2,9 @@ var gulp        = require('gulp');
 var $ = require('gulp-load-plugins')();
 var harp        = require('harp')
 var browserSync = require('browser-sync');
-var source = require('vinyl-source-stream');
 var reload      = browserSync.reload;
 var deploy      = require('gulp-gh-pages');
-var browserify = require('browserify');
 var cp          = require('child_process');
-var env         = require('gulp-env');
-var argv = require('minimist')(process.argv.slice(2));
 
 /**
  * Serve the Harp Site
@@ -40,29 +36,11 @@ gulp.task('serve', function () {
   })
 });
 
-// Browserify task
-gulp.task('browserify', function() {
-  var bundleStream = browserify({
-    entries: ['./public/js/main.js'],
-    debug: true
-  }).bundle().pipe(source('core.js'));
-  return bundleStream.pipe(gulp.dest('./dist/js'));
-});
-
-gulp.task('set-env', function () {
-    env({
-        file: ".env.json",
-        vars: {
-            //any vars you want to overwrite
-        }
-    });
-});
-
 /**
  * Build the Harp Site
  */
-gulp.task('build',['browserify'], function (done) {
-  cp.exec('harp compile . dist', {stdio: 'inherit'})
+gulp.task('build', function (done) {
+  cp.exec('harp compile . public', {stdio: 'inherit'})
     .on('close', done)
 });
 
@@ -70,50 +48,10 @@ gulp.task('build',['browserify'], function (done) {
  * Push build to gh-pages
  */
 gulp.task('deploy', ['build'], function () {
-  return gulp.src("./dist/**/*")
+  return gulp.src("./public/**/*")
     .pipe(deploy());
 });
 
-
-
-/**
- * clean it up
- */
-gulp.task('clean', function () {
-  return gulp.src('dist/**/*', {read: false})
-    .pipe($.clean());
-});
-
-/**
- *  Publish to Amazon S3 / CloudFront
- */
-gulp.task('s3deploy', ['build','set-env'], function () {
-    var awspublish = require('gulp-awspublish');
-    var aws = {
-        "key": process.env.AWS_KEY,
-        "secret": process.env.AWS_SECRET,
-        "bucket": 'michael.colenso.org',
-        "region": 'us-west-2'
-    };
-
-var publisher = awspublish.create(aws);
-    var headers = {
-        'Cache-Control': 'max-age=315360000, no-transform, public'
-    };
-  return gulp.src('./dist/**')
-        // Add a revisioned suffix to the filename for each static asset
-        //.pipe($.revAll())
-        // Gzip, set Content-Encoding headers
-        .pipe(awspublish.gzip())
-        // Publisher will add Content-Length, Content-Type and headers specified above
-        // If not specified it will set x-amz-acl to public-read by default
-        .pipe(publisher.publish(headers))
-
-        // Print upload updates to console
-        .pipe(awspublish.reporter())
-        // Updates the Default Root Object of a CloudFront distribution
-        //.pipe($.cloudfront(aws));
-});
 
 
 /**
