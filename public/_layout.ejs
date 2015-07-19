@@ -1,72 +1,56 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>colenso.org</title>
-  <meta name="description" content="<%- description %>">
-  <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Latin+Modern+Mono:400/Libre+Caslon+Display:400">
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
-  
-  <meta property="og:title" content="<%- site %>" />
-  <meta property="og:description" content="<%- description %>" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://colenso.org" />
-  <meta property="og:image" content="/apple-touch-icon.png" />
-  <meta property="og:site_name" content="<%- site %>" />
-  
-</head>
-<body>
-  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>colenso.org</title>
+    <meta name="description" content="<%- description %>">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="//brick.a.ssl.fastly.net/Latin+Modern+Mono:400/Libre+Caslon+Display:400">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+
+    <meta property="og:title" content="<%- site %>" />
+    <meta property="og:description" content="<%- description %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://colenso.org" />
+    <meta property="og:image" content="/apple-touch-icon.png" />
+    <meta property="og:site_name" content="<%- site %>" />
+  </head>
+  <body>
   <div class="wrapper">
     <div class="header navbar">
       <div class="container">
         <div class="row">
-          
           <div class="col-md-4 col-sm-4 col-xs-4">
             <h5 class="header-logo"><a href="/">colenso</a></h5>
           </div>
-          
-          
           <div class="col-md-4 col-sm-4 col-xs-8">
             <%- partial("_shared/_navigation") %>
           </div>
-          
           <div class="col-md-4 col-sm-4">
             <%- partial("_shared/_social") %>
           </div>
-          
         </div>
-        
       </div>
     </div>
-    
     <div class="main" role="main">
       <div class="container">
         <div class="row">
           <% if(current.published !== false || environment=='development') { %>
             <% var post_view = (current.path[0] == "projects" || current.path[0] == "articles") && current.path[1] != "index" %>
-            <% if(post_view) { %>
-              <%- partial("_partials/_content") %>
-              <% } else { %>
-                <%- yield %>
-                <% } %>
-                <% } else { %>
-                  <%- partial("404") %>
-                  <% } %>
-                </div>
-              </div>
-            </div>
+          <% if(post_view) { %>
+            <%- partial("_partials/_content") %>
+          <% } else { %>
+            <%- yield %>
+          <% } %>
+          <% } else { %>
+            <%- partial("404") %>
+          <% } %>
+        </div>
+      </div>
+    </div>
   </div>
-  
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-      <script src="http://cdn.embed.ly/jquery.embedly-3.1.2.min.js"></script>
-      <script src="/js/main.js"></script>
-      </body>
-      </html>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

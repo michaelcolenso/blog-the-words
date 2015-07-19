@@ -6,34 +6,24 @@
 
   @media (max-width: $screen-xs)
     margin-bottom: 0
-    
   .header-logo,
   .header-navigation,
   .header-social
     +type(30)
     @extend %type-heading
     line-height: $line-height-base
-  
-    
   .header-logo
     margin-top: 0
     @extend %type-body
     text-align: left
-    &:after
-      content: '.org'
-      position: relative
-      opacity: .8
-      transition: all 1s ease-in
-    &:hover:after
-      opacity: 0
     &:before
       content: 'michael'
       position: relative
-      opacity: 0
+      opacity: .8
       transform: perspective( 600px ) rotateX(120deg)
       transition: all 1s ease-in-out
     &:hover:before
-      opacity: .8
+      opacity: 0
       transform: translateX(0px) perspective (0)
       color: $color-abel
     a

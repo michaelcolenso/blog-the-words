@@ -1,61 +1,25 @@
 var gulp        = require('gulp');
-var $ = require('gulp-load-plugins')();
-var harp        = require('harp')
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
-var deploy      = require('gulp-gh-pages');
-var cp          = require('child_process');
+var harp        = require('harp');
 
-/**
- * Serve the Harp Site
- */
-gulp.task('serve', function () {
-  harp.server(__dirname, {
-    port: 9000
-}, function () {
-    browserSync({
-      proxy: "localhost:9000",
-      open: false,
-      /* Hide the notification. It gets annoying */
-      notify: {
-        styles: ['opacity: 0', 'position: absolute']
-      }
-    });
-    /**
-     * Watch for sass changes, tell BrowserSync to refresh main.css
-     */
-    gulp.watch("public/**/*.sass", function () {
-      reload("main.css", {stream: true});
-    });
-    /**
-     * Watch for all other changes, reload the whole page
-     */
-    gulp.watch(["public/**/*.ejs", "public/**/*.json", "public/**/*.md"], function () {
-      reload();
-    });
-  })
+gulp.task('harp-server', function () {
+    harp.server(__dirname, {
+        port: 4000
+    }, function () {
+        browserSync({
+            proxy: "localhost:4000",
+            open: false
+        });
+
+        gulp.watch("public/css/**/*.sass", function () {
+            reload("main.css", {stream: true});
+        });
+
+        gulp.watch(["public/**/*.ejs", "public/**/*.jade", "public/js/**/*.js", "**/*.json"], function () {
+            reload();
+        });
+    })
 });
 
-/**
- * Build the Harp Site
- */
-gulp.task('build', function (done) {
-  cp.exec('harp compile . public', {stdio: 'inherit'})
-    .on('close', done)
-});
-
-/**
- * Push build to gh-pages
- */
-gulp.task('deploy', ['build'], function () {
-  return gulp.src("./public/**/*")
-    .pipe(deploy());
-});
-
-
-
-/**
- * Default task, running `gulp` will fire up the Harp site,
- * launch BrowserSync & watch files.
- */
-gulp.task('default', ['serve']);
+gulp.task('default', ['harp-server']);

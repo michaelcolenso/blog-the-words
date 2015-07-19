@@ -2,6 +2,6 @@
   "globals": {
     "site": "colenso.org",
     "description": "michael colenso | developer",
-    "url": "http://colenso.org"
+    "url": "http://localhost:3000"
   }
 }
